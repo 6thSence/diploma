@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './main.css';
-import World from '../../components/world/world';
 
 const Main = React.createClass ({
     start() {
@@ -10,6 +9,7 @@ const Main = React.createClass ({
         });
         setTimeout('alert("go away!")', 1500);
     },
+
     getInitialState(){
         return {
             start: false
