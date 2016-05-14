@@ -1,8 +1,29 @@
-body {
-    margin: 0;
-    background: #c4c4c4;
-
-    & .red {
-        color: red;
+@keyframes start {
+    0% {
+        top: 50%;
+        }
+    100% {
+        top: -50%;
         }
     }
+
+.circle {
+    position: absolute 50% * * 50%;
+    transform: translate(-50%, -50%);
+    background: url(./assets/space__cirle.jpeg) center/contain no-repeat;
+    size: 300px;
+    border-radius: 50%;
+    }
+
+    .rocket {
+        position: absolute 50% * * 50%;
+        transform: translateX(-50%);
+        background: url(./assets/rocket.png) center/contain no-repeat;
+        size: 150px 200px;
+        }
+
+    .started {
+        composes: rocket;
+        animation: start ease-in-out 1s forwards;
+        }
+
