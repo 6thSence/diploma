@@ -9,7 +9,7 @@ export default class Home extends Component {
         return (
             <div className={styles.home}>
                 <nav className={styles.home__nav}>
-                    <Link className={styles["home__nav-link"]} to="/profile">Персона</Link>
+                    <Link className={styles["home__nav-link"]} to="/profile/Ann">Персона</Link>
                     <Link className={styles["home__nav-link"]} to="/challenges">Стартуем</Link>
                     <Link className={styles["home__nav-link"]} to="/results">Достижения</Link>
                     <Link className={styles["home__nav-link"]} to="/share">Рассказать</Link>

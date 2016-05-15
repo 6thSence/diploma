@@ -34,7 +34,7 @@
             text-decoration: none;
             font-weight: bold;
             opacity: 0;
-            animation: show ease-in .3s forwards;
+            animation: show ease-in .4s forwards;
             flex: 1;
 
             &:hover {
@@ -43,11 +43,11 @@
             }
 
         .home__nav-link:nth-child(2n) {
-            animation-delay: .6s;
+            animation-delay: .2s;
             }
         .home__nav-link:nth-child(3n) {
-            animation-delay: .9s;
+            animation-delay: .4s;
             }
         .home__nav-link:nth-child(4n) {
-            animation-delay: 1.2s;
+            animation-delay: .6s;
             }

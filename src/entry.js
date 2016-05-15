@@ -1,6 +1,6 @@
 import React  from 'react';
 import { render } from 'react-dom';
-import { Router, browserHistory } from 'react-router';
+import { Router, browserHistory, IndexRoute } from 'react-router';
 
 import Challenges from './containers/challenges/challenges';
 import Main from './containers/main/main';
@@ -13,7 +13,8 @@ render(
     <Router history={browserHistory}>
         <Router path="/" component={Main}/>
         <Router path="home" component={Home}>
-            <Router path="/profile" component={Profile}/>
+            <IndexRoute component={Results} />
+            <Router path="/profile/:user" component={Profile}/>
             <Router path="/challenges" component={Challenges}/>
             <Router path="/results" component={Results}/>
             <Router path="/share" component={Share}/>
