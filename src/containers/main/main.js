@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { browserHistory } from 'react-router';
 import styles from './main.css';
 
 const Main = React.createClass ({
@@ -7,7 +7,7 @@ const Main = React.createClass ({
         this.setState({
             start: 'true'
         });
-        setTimeout('alert("go away!")', 1500);
+        setTimeout(() => browserHistory.push('/challenges'), 1500);
     },
 
     getInitialState(){
@@ -21,7 +21,7 @@ const Main = React.createClass ({
             <div className={styles.main}>
                 <div className={styles.circle}></div>
                 <div className={this.state.start ? styles.started : styles.rocket}></div>
-                <a href="#" className={styles.button} onClick={this.start}>Поехали</a>
+                <a href="#" className={styles.button} onClick={this.start}>Поехали  </a>
             </div>
             )
     }
