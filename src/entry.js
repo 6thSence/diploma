@@ -9,15 +9,22 @@ import Results from './containers/results/results';
 import Profile from './containers/profile/profile';
 import Share from './containers/share/share';
 
-render(
-    <Router history={browserHistory}>
-        <Router path="/" component={Main}/>
-        <Router path="home" component={Home}>
-            <IndexRoute component={Results} />
-            <Router path="/profile/:user" component={Profile}/>
-            <Router path="/challenges" component={Challenges}/>
-            <Router path="/results" component={Results}/>
-            <Router path="/share" component={Share}/>
+const ask = () => {
+    if (confirm('Для достижения результата нужно завершить тестирование. Уйти?')) {
+        console.log('true');
+    } else {
+        console.log('false');
+    }
+};
+
+render(<Router history={browserHistory}>
+            <Router path="/" component={Main}/>
+            <Router path="home" component={Home}>
+                <IndexRoute component={Results} />
+                <Router path="/profile/:user" component={Profile}/>
+                <Router path="/challenges" component={Challenges} onLeave={ask}/>
+                <Router path="/results" component={Results}/>
+                <Router path="/share" component={Share}/>
+            </Router>
         </Router>
-    </Router>
 ,document.getElementById('app'));
