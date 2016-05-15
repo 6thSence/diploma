@@ -7,7 +7,7 @@ const Main = React.createClass ({
         this.setState({
             start: 'true'
         });
-        setTimeout(() => browserHistory.push('/challenges'), 1500);
+        setTimeout(() => browserHistory.push('/home'), 1500);
     },
 
     getInitialState(){

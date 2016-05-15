@@ -35,8 +35,8 @@ module.exports = {
             nested,
             short,
             assets,
-            autoprefixer,
             stylelint(rulesStyles),
+            autoprefixer,
             reporter()
         ];
     }
