@@ -10,11 +10,12 @@ import Profile from './containers/profile/profile';
 import Share from './containers/share/share';
 
 const ask = () => {
-    if (confirm('Для достижения результата нужно завершить тестирование. Уйти?')) {
-        console.log('true');
-    } else {
-        console.log('false');
-    }
+    //TODO: leave action from challenges
+    //if (confirm('Для достижения результата нужно завершить тестирование. Уйти?')) {
+    //    console.log('true');
+    //} else {
+    //    console.log('false');
+    //}
 };
 
 render(<Router history={browserHistory}>

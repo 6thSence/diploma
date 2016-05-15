@@ -1,0 +1,7 @@
+.answer {
+    cursor: pointer;
+
+    &:hover {
+        background: #c4c4c4;
+        }
+    }
