@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-var NotificationSystem = require('react-notification-system');
+import NotificationSystem from 'react-notification-system';
 
 import Answer from '../../components/answer/answer';
 import Question from '../../components/question/question';
@@ -82,10 +82,11 @@ const Challenges = React.createClass({
                 <NotificationSystem ref="notificationSystem" />
 
                 <h2>This is your first test. Good luck!</h2>
-                { this.state.testBase.map(item => <Question
-                    question={item}
-                    key={item.id}
-                    checkAnswer={this.checkAnswer}/>
+                { this.state.testBase.map(item =>
+                    <Question
+                        question={item}
+                        key={item.id}
+                        checkAnswer={this.checkAnswer}/>
                 )}
             </div>
         )
