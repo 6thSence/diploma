@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+var NotificationSystem = require('react-notification-system');
 
 import Answer from '../../components/answer/answer';
 import Question from '../../components/question/question';
@@ -50,13 +51,36 @@ const Challenges = React.createClass({
 
     checkAnswer(id, answerId) {
         const question = this.state.testBase.filter(item => item.id === id);
-        question[0].trueAnswerId === answerId ? console.log('Верно!') : console.log('Не верно!');
+        question[0].trueAnswerId === answerId
+            ? this._notificationSystem.addNotification({
+                message: 'Верно!',
+                level: 'success'
+            })
+            : this._notificationSystem.addNotification({
+                message: 'Не верно!',
+                level: 'error'
+            });
+    },
+
+    _addNotification(event) {
+        event.preventDefault();
+        this._notificationSystem.addNotification({
+            message: 'Notification message',
+            level: 'success'
+        });
+    },
+
+    componentDidMount() {
+        this._notificationSystem = this.refs.notificationSystem;
     },
 
     render() {
         return (
             <div className={styles.challenges}>
                 it's challenges
+
+                <NotificationSystem ref="notificationSystem" />
+
                 <h2>This is your first test. Good luck!</h2>
                 { this.state.testBase.map(item => <Question
                     question={item}
