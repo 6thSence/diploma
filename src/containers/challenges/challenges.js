@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import Answer from '../../components/answer/answer';
 import Question from '../../components/question/question';
 import styles from './challenges.css';
+import { setYear } from '../../actions/PageActions';
 
 const Challenges = React.createClass({
     getInitialState() {
@@ -74,12 +75,12 @@ const Challenges = React.createClass({
 
     componentDidMount() {
         this._notificationSystem = this.refs.notificationSystem;
+        this.props.dispatch(setYear('2000'));
     },
 
     render() {
         const { name } = this.props.user;
         const { year, photos } = this.props.page;
-
         return (
             <div className={styles.challenges}>
                 it's challenges
