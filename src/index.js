@@ -35,14 +35,3 @@ render(<Provider store={store}>
     </Router>
 </Provider>
 ,document.getElementById('app'));
-
-//render(  <Provider store={store}>
-//    <Challenges />
-//    </Provider>
-//,document.getElementById('app'));
-
-//TODO: redux dev-tools
-//if (process.env.NODE_ENV !== 'production') {
-//    const showDevTools = require('./utils/showDevTools');
-//    showDevTools(store);
-//}

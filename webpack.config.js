@@ -8,7 +8,7 @@ const rulesStyles = require('./stylelintrc.json');
 const webpack = require('webpack');
 
 module.exports = {
-    devtool: 'eval',
+    devtool: '#inline-source-map',
     entry: [
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/only-dev-server',

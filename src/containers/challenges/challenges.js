@@ -6,54 +6,14 @@ import { connect } from 'react-redux'
 import Answer from '../../components/answer/answer';
 import Question from '../../components/question/question';
 import styles from './challenges.css';
-import { setYear } from '../../actions/PageActions';
+import { questions } from './selectors';
+import { answer } from '../../actions/pageActions';
 
 const Challenges = React.createClass({
-    getInitialState() {
-        return {
-            testBase: [
-               {
-                   id: 1,
-                   question: '3 + 4 = ?',
-                   anyAnswer: [{
-                       name: 7,
-                       id: 1
-                   }, {
-                       name: 5,
-                       id: 2
-                   }, {
-                       name: 4,
-                       id: 3
-                   }, {
-                       name: 9,
-                       id: 4
-                   }],
-                   trueAnswerId: 1
-               },
-               {
-                   id: 2,
-                   question: '8 - 3 = ?',
-                   anyAnswer: [{
-                       name: 7,
-                       id: 1
-                   }, {
-                       name: 5,
-                       id: 2
-                   }, {
-                       name: 4,
-                       id: 3
-                   }, {
-                       name: 9,
-                       id: 4
-                   }],
-                   trueAnswerId: 2
-               }
-            ]
-        }
-    },
 
     checkAnswer(id, answerId) {
-        const question = this.state.testBase.filter(item => item.id === id);
+        this.props.dispatch(answer(id, answerId, this.props.questionsBD));
+        const question = this.props.questionsBD.testBase.filter(item => item.id === id);
         question[0].trueAnswerId === answerId
             ? this._notificationSystem.addNotification({
                 message: 'Верно!',
@@ -75,22 +35,16 @@ const Challenges = React.createClass({
 
     componentDidMount() {
         this._notificationSystem = this.refs.notificationSystem;
-        this.props.dispatch(setYear('2000'));
     },
 
     render() {
-        const { name } = this.props.user;
-        const { year, photos } = this.props.page;
+        const { questions } = this.props;
         return (
             <div className={styles.challenges}>
-                it's challenges
-                <p>Привет, {name}!</p>
-                <p>У тебя {photos} фото за {year} год</p>
-
                 <NotificationSystem ref="notificationSystem" />
 
                 <h2>This is your first test. Good luck!</h2>
-                { this.state.testBase.map(item =>
+                { questions.map(item =>
                     <Question
                         question={item}
                         key={item.id}
@@ -102,12 +56,13 @@ const Challenges = React.createClass({
     }
 });
 
-//export default Challenges;
-
-const mapStateToProps = (state) => ({
-    user: state.user,
-    page: state.page,
-});
+const mapStateToProps = (state) => {
+    return {
+        questionsBD: state.questions,
+        questions: questions(state),
+        usersAnswers: state.usersAnswers
+    };
+};
 
 export default connect(mapStateToProps)(Challenges)
 

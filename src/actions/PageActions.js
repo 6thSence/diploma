@@ -1,10 +1,12 @@
-import { SET_YEAR } from '../constants/Page';
+import { ANSWER } from '../constants/challenges';
 
-export function setYear(year) {
-
+export function answer(idQuestion, idAnswer, questionsBD) {
     return {
-        type: SET_YEAR,
-        payload: year
+        type: ANSWER,
+        idQuestion: idQuestion,
+        idAnswer: idAnswer,
+        questionsBD: questionsBD
     }
 
 }
+
