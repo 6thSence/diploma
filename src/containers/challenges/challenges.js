@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import NotificationSystem from 'react-notification-system';
+import { connect } from 'react-redux'
 
 import Answer from '../../components/answer/answer';
 import Question from '../../components/question/question';
@@ -75,9 +77,14 @@ const Challenges = React.createClass({
     },
 
     render() {
+        const { name } = this.props.user;
+        const { year, photos } = this.props.page;
+
         return (
             <div className={styles.challenges}>
                 it's challenges
+                <p>Привет, {name}!</p>
+                <p>У тебя {photos} фото за {year} год</p>
 
                 <NotificationSystem ref="notificationSystem" />
 
@@ -86,6 +93,7 @@ const Challenges = React.createClass({
                     <Question
                         question={item}
                         key={item.id}
+                        ref={'id' + item.id}
                         checkAnswer={this.checkAnswer}/>
                 )}
             </div>
@@ -93,4 +101,12 @@ const Challenges = React.createClass({
     }
 });
 
-export default Challenges;
+//export default Challenges;
+
+const mapStateToProps = (state) => ({
+    user: state.user,
+    page: state.page,
+});
+
+export default connect(mapStateToProps)(Challenges)
+
