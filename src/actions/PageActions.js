@@ -1,4 +1,4 @@
-import { ANSWER } from '../constants/challenges';
+import { ANSWER, REMOVE_USER_ANSWERS } from '../constants/challenges';
 
 export function answer(idQuestion, idAnswer, questionsDB) {
     return {
@@ -8,5 +8,9 @@ export function answer(idQuestion, idAnswer, questionsDB) {
         questionsDB: questionsDB
     }
 
+}
+
+export function removeUserAnswers() {
+    return { type: REMOVE_USER_ANSWERS }
 }
 

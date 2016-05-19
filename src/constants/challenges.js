@@ -1,1 +1,2 @@
 export const ANSWER = 'ANSWER';
+export const REMOVE_USER_ANSWERS = 'REMOVE_USER_ANSWERS';

@@ -1,4 +1,5 @@
-import { ANSWER } from '../constants/challenges';
+import { ANSWER, REMOVE_USER_ANSWERS } from '../constants/challenges';
+import { tail } from '../utils/helpers';
 
 const initialState = {
     userAnswers: [],
@@ -47,8 +48,17 @@ export default function questions(state = initialState, action) {
             return {
                 ...state,
                 userAnswers: newAnswers,
-                questions: newQuestions
+                questions: newQuestions,
+                questionsDB: action.questionsDB,
+                lastAnswer: tail(newAnswers).answer
             };
+        case REMOVE_USER_ANSWERS:
+        return {
+            ...state,
+            questions: [],
+            questionsDB: [],
+            lastAnswer: null
+        };
         default:
             return state;
     }
