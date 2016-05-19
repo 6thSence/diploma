@@ -4,15 +4,13 @@ import styles from './resultTest.css';
 
 const ResultTest = React.createClass({
 
-    componentWillUnmount () {
-        this.props.removeTest();
-    },
-
     render() {
-    const { points,
-        countTrue,
-        countFalse,
-        userAnswers } = this.props;
+        const { userAnswers } = this.props;
+        let countTrue = 0;
+        let countFalse = 0;
+        userAnswers.forEach(item => item.answer ? countTrue++ : countFalse++);
+        const points = countTrue*5;
+
         return (
             <div className={ styles.result }>
                 <h2>Тест окончен.</h2>

@@ -10,28 +10,12 @@ import Question from '../../components/question/question';
 import ResultTest from '../../components/resultTest/resultTest'
 import styles from './challenges.css';
 import { selectQuestions } from './selectors';
-import { answer, removeUserAnswers } from '../../actions/pageActions';
+import { answer, finishedTest } from '../../actions/pageActions';
 
 const Challenges = React.createClass({
 
     checkAnswer(idQuestion, idAnswer) {
         this.props.dispatch(answer(idQuestion, idAnswer, this.props.questionsDB));
-    },
-
-    checkResult() {
-        let countTrue = 0;
-        let countFalse = 0;
-        this.props.userAnswers.forEach(item => {
-            item.answer === false ? countFalse++ : countTrue++;
-        });
-        const answers = this.props.userAnswers;
-        //TODO: send result to db
-        return <ResultTest
-            countTrue={countTrue}
-            countFalse={countFalse}
-            points={countTrue}
-            userAnswers={answers}
-            removeTest={() => this.props.dispatch(removeUserAnswers())} />;
     },
 
     _addNotification(event) {
@@ -47,38 +31,45 @@ const Challenges = React.createClass({
     },
 
     componentWillReceiveProps() {
-        switch (this.props.lastAnswer) {
-            case true:
-                this._notificationSystem.addNotification({
-                    message: 'Верно!',
-                    level: 'success'
-                });
-                break;
-            case false:
-                this._notificationSystem.addNotification({
-                    message: `Не верно! Правильный ответ: ${tail(this.props.userAnswers).trueAnswer}`,
-                    level: 'error'
-                });
-                break;
-            default:
-                break;
+        if (!this.props.finishedTest) {
+            switch (tail(this.props.userAnswers).answer) {
+                case true:
+                    this._notificationSystem.addNotification({
+                        message: 'Верно!',
+                        level: 'success'
+                    });
+                    break;
+                case false:
+                    this._notificationSystem.addNotification({
+                        message: `Не верно! Правильный ответ: ${tail(this.props.userAnswers).trueAnswer}`,
+                        level: 'error'
+                    });
+                    break;
+                default:
+                    break;
+            }
         }
     },
 
     render() {
-        const { questions } = this.props;
+        const { questions, finishedTest } = this.props;
+
         return (
             <div className={styles.challenges}>
                 <NotificationSystem ref="notificationSystem" />
 
-                <h2>This is your first test. Good luck!</h2>
-                { questions && questions.map(question =>
+                { !finishedTest
+                    ? <h2>This is your first test. Good luck!</h2>
+                    : <h2>Good Job!</h2> }
+
+                { !finishedTest && questions.map(question =>
                     <Question
                         question={question}
                         key={question.idQuestion}
                         checkAnswer={this.checkAnswer}/>
                 )}
-                { questions.length == 0 ? this.checkResult() : null }
+                { finishedTest ? <ResultTest
+                    userAnswers={this.props.userAnswers} /> : null }
             </div>
         )
     }
@@ -89,7 +80,7 @@ const mapStateToProps = (state) => {
         questionsDB: state.test.questions || [],
         questions: selectQuestions(state.test.questions) || [],
         userAnswers: state.test.userAnswers || [],
-        lastAnswer: state.lastAnswer || null
+        finishedTest: state.test.finishedTest
     };
 };
 

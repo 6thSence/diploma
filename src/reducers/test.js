@@ -1,7 +1,8 @@
-import { ANSWER, REMOVE_USER_ANSWERS } from '../constants/challenges';
+import { ANSWER } from '../constants/challenges';
 import { tail } from '../utils/helpers';
 
 const initialState = {
+    finishedTest: false,
     userAnswers: [],
     questions: [
         {
@@ -45,20 +46,15 @@ export default function questions(state = initialState, action) {
                     trueAnswer: question[0].answers[question[0].idAnswer]
                 });
             const newQuestions = state.questions.filter(item => item.idQuestion != action.idQuestion);
+            const finishedTest = newQuestions.length < 1 ? true : false;
+
             return {
                 ...state,
                 userAnswers: newAnswers,
                 questions: newQuestions,
                 questionsDB: action.questionsDB,
-                lastAnswer: tail(newAnswers).answer
+                finishedTest: finishedTest
             };
-        case REMOVE_USER_ANSWERS:
-        return {
-            ...state,
-            questions: [],
-            questionsDB: [],
-            lastAnswer: null
-        };
         default:
             return state;
     }
