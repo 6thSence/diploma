@@ -5,14 +5,14 @@ import styles from './answer.css';
 export default class Answer extends Component {
 
     render() {
-        const { answerName,
-            answerId,
-            questionId,
+        const { answer,
+            idAnswer,
+            idQuestion,
             checkAnswer
         } = this.props;
         return (
-            <li className={ styles.answer } onClick={() => checkAnswer(questionId, answerId)}>
-                { answerName }
+            <li className={ styles.answer } onClick={() => checkAnswer(idQuestion, idAnswer)}>
+                { answer }
             </li>
         )
     }

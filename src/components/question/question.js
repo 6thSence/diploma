@@ -7,19 +7,19 @@ export default class Question extends Component {
 
     render() {
         const { question,
-            id,
-            anyAnswer,
+            idQuestion,
+            answers,
         } = this.props.question;
 
         return (
             <div className={styles.question}>
                 <h3>{ question }</h3>
                 <ul>
-                    {anyAnswer.map(answer => <Answer
-                        answerName={answer.name}
-                        answerId={answer.id}
-                        questionId={id}
-                        key={answer.id}
+                    {Object.keys(answers).map(id => <Answer
+                        answer={answers[id]}
+                        idAnswer={Number(id)}
+                        idQuestion={idQuestion}
+                        key={id}
                         checkAnswer = {this.props.checkAnswer}/>
                     )}
                 </ul>

@@ -1,5 +1,5 @@
 export const questions = (state) =>
-    state.questions.testBase.map(item => {
-        const { trueAnswerId, ...question} = item;
+    state.test.questions.map(item => {
+        const { idAnswer, ...question} = item;
         return question;
     });
