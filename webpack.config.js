@@ -15,8 +15,8 @@ module.exports = {
         './src/index'
     ],
     output: {
-        path: __dirname,
-        filename: './dist/bundle.js'
+        path: './static',
+        filename: 'bundle.js'
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
