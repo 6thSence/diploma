@@ -13,7 +13,7 @@ const ResultTest = React.createClass({
 
         return (
             <div className={ styles.result }>
-                <h2>Тест окончен.</h2>
+                <h2>Тест окончен. Ура!</h2>
                 <p>Баллы: {points}</p>
                 <p>Правильных ответов: {countTrue}</p>
                 <p>Неправильных ответов: {countFalse}</p>

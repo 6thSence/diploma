@@ -6,17 +6,19 @@ const reporter = require('postcss-browser-reporter');
 const stylelint = require('stylelint');
 const rulesStyles = require('./stylelintrc.json');
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
-    devtool: '#inline-source-map',
+    devtool: 'cheap-module-eval-source-map',
     entry: [
-        'webpack-dev-server/client?http://localhost:3000',
-        'webpack/hot/only-dev-server',
+        'webpack/hot/dev-server',
+        'webpack-hot-middleware/client',
         './src/index'
     ],
     output: {
-        path: './static',
-        filename: 'bundle.js'
+        path: path.join(__dirname, 'static'),
+        filename: 'bundle.js',
+        publicPath: '/static/'
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
