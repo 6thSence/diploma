@@ -9,5 +9,5 @@ npm run start
 
 ## process.env
 ``` javascript
-    DEBUG=true  //for development
+    NODE_ENV=development  //for development
 ```
