@@ -10,7 +10,7 @@ import Question from '../../components/question/question';
 import ResultTest from '../../components/resultTest/resultTest'
 import styles from './challenges.css';
 import { selectQuestions } from './selectors';
-import { answer, finishedTest } from '../../actions/pageActions';
+import { answer } from '../../actions/pageActions';
 
 const Challenges = React.createClass({
 
