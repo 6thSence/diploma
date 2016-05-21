@@ -1,4 +1,5 @@
-import { ANSWER } from '../constants/challenges';
+import { ANSWER, GET_QUESTIONS } from '../constants/challenges';
+
 export function answer(idQuestion, idAnswer, questionsDB) {
     return {
         type: ANSWER,
@@ -6,5 +7,11 @@ export function answer(idQuestion, idAnswer, questionsDB) {
         idAnswer: idAnswer,
         questionsDB: questionsDB
     }
+}
 
+export function getQuestions(questions) {
+    return {
+        type: GET_QUESTIONS,
+        questions: questions
+    }
 }

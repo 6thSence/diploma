@@ -9,13 +9,15 @@ import Answer from '../../components/answer/answer';
 import Question from '../../components/question/question';
 import ResultTest from '../../components/resultTest/resultTest'
 import styles from './challenges.css';
-import { selectQuestions } from './selectors';
-import { answer } from '../../actions/pageActions';
+import { answer, getQuestions } from '../../actions/pageActions';
+import DevTools from '../DevTools/DevTools';
 
 const Challenges = React.createClass({
 
     checkAnswer(idQuestion, idAnswer) {
-        this.props.dispatch(answer(idQuestion, idAnswer, this.props.questionsDB));
+        fetch('http://localhost:3000/db')
+            .then((response) => response.status === 200 ? response.json() : error)
+            .then(json => this.props.dispatch(answer(idQuestion, idAnswer, json)));
     },
 
     _addNotification(event) {
@@ -26,12 +28,18 @@ const Challenges = React.createClass({
         });
     },
 
+    componentWillMount() {
+        fetch('http://localhost:3000/db')
+            .then((response) => response.status === 200 ? response.json() : error)
+            .then(json => this.props.dispatch(getQuestions(json)));
+    },
+
     componentDidMount() {
         this._notificationSystem = this.refs.notificationSystem;
     },
 
     componentWillReceiveProps() {
-        if (!this.props.finishedTest) {
+        if (!this.props.finishedTest && this.props.userAnswers.length > 0) {
             switch (tail(this.props.userAnswers).answer) {
                 case true:
                     this._notificationSystem.addNotification({
@@ -70,6 +78,7 @@ const Challenges = React.createClass({
                 )}
                 { finishedTest ? <ResultTest
                     userAnswers={this.props.userAnswers} /> : null }
+                <DevTools />
             </div>
         )
     }
@@ -77,8 +86,7 @@ const Challenges = React.createClass({
 
 const mapStateToProps = (state) => {
     return {
-        questionsDB: state.test.questions || [],
-        questions: selectQuestions(state.test.questions) || [],
+        questions: state.test.questions || [],
         userAnswers: state.test.userAnswers || [],
         finishedTest: state.test.finishedTest
     };
