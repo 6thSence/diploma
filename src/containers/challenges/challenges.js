@@ -9,7 +9,7 @@ import Question from '../../components/question/question';
 import ResultTest from '../../components/resultTest/resultTest'
 import styles from './challenges.css';
 import { answer, getQuestions } from '../../actions/challenges';
-import DevTools from '../DevTools/DevTools';
+import { addResult } from '../../actions/user';
 
 const Challenges = React.createClass({
 
@@ -37,7 +37,7 @@ const Challenges = React.createClass({
         this._notificationSystem = this.refs.notificationSystem;
     },
 
-    componentWillReceiveProps() {
+    componentWillReceiveProps(nextProps) {
         if (!this.props.finishedTest && this.props.userAnswers.length > 0) {
             switch (tail(this.props.userAnswers).answer) {
                 case true:
@@ -56,6 +56,11 @@ const Challenges = React.createClass({
                     break;
             }
         }
+
+        if (nextProps.finishedTest && !nextProps.user.results) {
+            nextProps.dispatch(addResult(true));
+        }
+
     },
 
     render() {
@@ -77,7 +82,6 @@ const Challenges = React.createClass({
                 )}
                 { finishedTest ? <ResultTest
                     userAnswers={this.props.userAnswers} /> : null }
-                <DevTools />
             </div>
         )
     }
@@ -87,7 +91,8 @@ const mapStateToProps = (state) => {
     return {
         questions: state.test.questions || [],
         userAnswers: state.test.userAnswers || [],
-        finishedTest: state.test.finishedTest
+        finishedTest: state.test.finishedTest,
+        user: state.user
     };
 };
 

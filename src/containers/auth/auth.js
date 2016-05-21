@@ -4,7 +4,7 @@ import NotificationSystem from 'react-notification-system';
 import { connect } from 'react-redux'
 
 import styles from './auth.css';
-import { auth } from '../../actions/auth';
+import { auth } from '../../actions/user';
 
 const Auth = React.createClass({
 

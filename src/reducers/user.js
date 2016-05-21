@@ -1,4 +1,4 @@
-import { AUTH } from '../constants/auth';
+import { AUTH, ADD_RESULT } from '../constants/user';
 import { tail } from '../utils/helpers';
 
 const initialState = {
@@ -14,6 +14,11 @@ export default function user(state = initialState, action) {
         case AUTH:
             const users = action.users.filter(item => item.email == action.userEmail && item.password == action.userPassword);
             return users.length > 0 ? { ...tail(users), authAnswer: true } : { authAnswer: false};
+        case ADD_RESULT:
+            return {
+                ...state,
+                results: action.result
+            };
         default:
             return state;
     }

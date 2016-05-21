@@ -1,4 +1,4 @@
-import { AUTH } from '../constants/auth';
+import { AUTH, ADD_RESULT } from '../constants/user';
 
 export function auth(users, userEmail, userPassword) {
     return {
@@ -6,5 +6,12 @@ export function auth(users, userEmail, userPassword) {
         users: users,
         userEmail: userEmail,
         userPassword: userPassword
+    }
+}
+
+export function addResult(result) {
+    return {
+        type: ADD_RESULT,
+        result: result
     }
 }
