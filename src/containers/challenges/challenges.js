@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import NotificationSystem from 'react-notification-system';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
 import { tail } from '../../utils/helpers';
 
@@ -9,7 +8,7 @@ import Answer from '../../components/answer/answer';
 import Question from '../../components/question/question';
 import ResultTest from '../../components/resultTest/resultTest'
 import styles from './challenges.css';
-import { answer, getQuestions } from '../../actions/pageActions';
+import { answer, getQuestions } from '../../actions/challenges';
 import DevTools from '../DevTools/DevTools';
 
 const Challenges = React.createClass({

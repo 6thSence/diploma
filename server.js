@@ -20,6 +20,23 @@ app.get('/db', (req, res) => {
         .catch();
 });
 
+
+app.get('/users', (req, res) => {
+    database
+        .connect()
+        .then((db) => {
+            db.collection('users')
+                .find()
+                .toArray((err, items) => {
+                    if (err) {
+                        return res.send(err);
+                    }
+                    return res.send(items);
+                });
+        })
+        .catch();
+});
+
 app.listen(port, function(error) {
     if (error) {
         console.error(error);

@@ -7,7 +7,29 @@ const Main = React.createClass ({
         this.setState({
             start: 'true'
         });
-        setTimeout(() => browserHistory.push('/home'), 1500);
+        setTimeout(() => browserHistory.push('/auth'), 1500);
+    },
+
+    componentWillReceiveProps() {
+        //TODO: get users
+        //if (!this.props.finishedTest && this.props.userAnswers.length > 0) {
+        //    switch (tail(this.props.userAnswers).answer) {
+        //        case true:
+        //            this._notificationSystem.addNotification({
+        //                message: 'Верно!',
+        //                level: 'success'
+        //            });
+        //            break;
+        //        case false:
+        //            this._notificationSystem.addNotification({
+        //                message: `Не верно! Правильный ответ: ${tail(this.props.userAnswers).trueAnswer}`,
+        //                level: 'error'
+        //            });
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
     },
 
     getInitialState(){

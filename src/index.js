@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { Router, browserHistory, IndexRoute } from 'react-router';
 import { Provider } from 'react-redux';
 
+import Auth from './containers/auth/auth';
 import Challenges from './containers/challenges/challenges';
 import configureStore from './store/configureStore';
 import Main from './containers/main/main';
@@ -25,6 +26,7 @@ const ask = () => {
 render(<Provider store={store}>
     <Router history={browserHistory}>
         <Router path="/" component={Main}/>
+        <Router path="auth" component={Auth}/>
         <Router path="home" component={Home}>
             <IndexRoute component={Results} />
             <Router path="/profile/:user" component={Profile}/>

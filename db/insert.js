@@ -1,6 +1,7 @@
 const mongodb = require('mongodb');
 
-const quesctions = require('./questions');
+const questionsJson = require('./questions');
+const usersJson = require('./users');
 
 const MongoClient = mongodb.MongoClient;
 const url = 'mongodb://localhost:27017';
@@ -11,12 +12,20 @@ module.exports.insert = () =>
             if (err) {
                 return reject(err);
             }
-            const collection = db.collection('questions');
-            collection.remove();
-            collection.insert(quesctions, (err, result) => {
-                    if (err) return err;
-                    console.log(result);
-                });
+            const questions = db.collection('questions');
+            const users = db.collection('users');
+
+            questions.remove();
+            users.remove();
+
+            questions.insert(questionsJson, (err, result) => {
+                if (err) return err;
+                console.log(result);
+            });
+            users.insert(usersJson, (err, result) => {
+                if (err) return err;
+                console.log(result);
+            });
         });
 
         return resolve(db);
