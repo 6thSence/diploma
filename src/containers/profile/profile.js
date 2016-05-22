@@ -1,28 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux'
 
 import styles from './profile.css';
 
-const Profile = React.createClass ({
-    getInitialState() {
-        return {
-            userName: ''
-        }
-    },
-
-    componentDidMount() {
-        const user = this.props.params.user;
-        this.setState({
-            userName: user
-        });
-    },
+const Profile = React.createClass({
 
     render() {
+        const { user } = this.props;
         return (
             <div className={styles.profile}>
-                it's profile for {this.state.userName}
+                it's profile
+                <p>Name: {user.name}</p>
+                <p>Email: {user.email}</p>
             </div>
         )
     }
 });
 
-export default Profile;
+const mapStateToProps = (state) => {
+    return {
+        user: state.user
+    };
+};
+
+export default connect(mapStateToProps)(Profile);
+

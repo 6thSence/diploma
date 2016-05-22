@@ -29,7 +29,7 @@ render(<Provider store={store}>
         <Router path="auth" component={Auth}/>
         <Router path="home" component={Home}>
             <IndexRoute component={Results} />
-            <Router path="/profile/:user" component={Profile}/>
+            <Router path="/profile" component={Profile}/>
             <Router path="/challenges" component={Challenges} onLeave={ask}/>
             <Router path="/results" component={Results}/>
             <Router path="/share" component={Share}/>

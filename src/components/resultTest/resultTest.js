@@ -17,7 +17,7 @@ const ResultTest = React.createClass({
         return (
             <div className={ styles.result }>
                 <h2>Тест окончен. Ура!</h2>
-                <p>Начисле баллов за достижение: {points}</p>
+                <p>Начислено баллов за достижение: {points}</p>
                 <p>Правильных ответов: {countTrue}</p>
                 <p>Неправильных ответов: {countFalse}</p>
                 <p>Процент: {countTrue/userAnswers.length*100}%</p>
