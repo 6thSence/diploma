@@ -7,12 +7,11 @@ const Results = React.createClass({
 
     render() {
         const { user } = this.props;
-        console.log(user);
         return (
             <div className={styles.auth}>
                 it's results
                 <p>Name: {user.name}</p>
-                { user.results ? 'У вас есть достижения' : 'У вас нет достижений' }
+                { user.points ? `Всего баллов: ${user.points}` : 'У вас нет достижений' }
             </div>
         )
     }

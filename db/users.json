@@ -3,12 +3,14 @@
 		"id": 1,
 		"name": "Пушкарская Дарья",
 		"email": "d.pushkarskaya.pr@gmail.com",
-		"password": "qwerty12345"
+		"password": "qwerty12345",
+		"points": 0
 	},
 	{
 		"id": 2,
 		"name": "admin",
 		"email": "admin@gmail.com",
-		"password": "admin"
+		"password": "admin",
+		"points": 0
 	}
 ]

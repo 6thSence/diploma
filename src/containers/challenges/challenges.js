@@ -19,6 +19,12 @@ const Challenges = React.createClass({
             .then(json => this.props.dispatch(answer(idQuestion, idAnswer, json)));
     },
 
+    addPoints() {
+        let points = 0;
+        this.props.userAnswers.forEach(item => { if (item.answer) points++; });
+        this.props.dispatch(addResult(points));
+    },
+
     _addNotification(event) {
         event.preventDefault();
         this._notificationSystem.addNotification({
@@ -28,9 +34,11 @@ const Challenges = React.createClass({
     },
 
     componentWillMount() {
-        fetch('http://localhost:3000/db')
-            .then((response) => response.status === 200 ? response.json() : error)
-            .then(json => this.props.dispatch(getQuestions(json)));
+        if (!this.props.finishedTest && this.props.questions.length < 1) {
+            fetch('http://localhost:3000/db')
+                .then((response) => response.status === 200 ? response.json() : error)
+                .then(json => this.props.dispatch(getQuestions(json)));
+        }
     },
 
     componentDidMount() {
@@ -57,15 +65,10 @@ const Challenges = React.createClass({
             }
         }
 
-        if (nextProps.finishedTest && !nextProps.user.results) {
-            nextProps.dispatch(addResult(true));
-        }
-
     },
 
     render() {
         const { questions, finishedTest } = this.props;
-
         return (
             <div className={styles.challenges}>
                 <NotificationSystem ref="notificationSystem" />
@@ -81,7 +84,9 @@ const Challenges = React.createClass({
                         checkAnswer={this.checkAnswer}/>
                 )}
                 { finishedTest ? <ResultTest
-                    userAnswers={this.props.userAnswers} /> : null }
+                    userAnswers={this.props.userAnswers}
+                    addPoints={this.addPoints}
+                    addResult={this.props.user.addResult}/> : null }
             </div>
         )
     }

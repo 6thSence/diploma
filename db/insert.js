@@ -6,7 +6,8 @@ const usersJson = require('./users');
 const MongoClient = mongodb.MongoClient;
 const url = 'mongodb://localhost:27017';
 
-module.exports.insert = () =>
+//module.exports.insert = () =>
+const insert = () =>
     new Promise((resolve, reject) => {
         MongoClient.connect(url, (err, db) => {
             if (err) {
@@ -30,3 +31,5 @@ module.exports.insert = () =>
 
         return resolve(db);
         });
+
+insert();

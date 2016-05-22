@@ -17,7 +17,8 @@ export default function user(state = initialState, action) {
         case ADD_RESULT:
             return {
                 ...state,
-                results: action.result
+                points: (state.points || 0) + action.points*5,
+                addResult: true
             };
         default:
             return state;

@@ -9,9 +9,9 @@ export function auth(users, userEmail, userPassword) {
     }
 }
 
-export function addResult(result) {
+export function addResult(points) {
     return {
         type: ADD_RESULT,
-        result: result
+        points: points
     }
 }

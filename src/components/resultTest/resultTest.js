@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import styles from './resultTest.css';
 
 const ResultTest = React.createClass({
+    componentWillMount () {
+      if (!this.props.addResult) { this.props.addPoints(); };
+    },
 
     render() {
         const { userAnswers } = this.props;
@@ -14,7 +17,7 @@ const ResultTest = React.createClass({
         return (
             <div className={ styles.result }>
                 <h2>Тест окончен. Ура!</h2>
-                <p>Баллы: {points}</p>
+                <p>Начисле баллов за достижение: {points}</p>
                 <p>Правильных ответов: {countTrue}</p>
                 <p>Неправильных ответов: {countFalse}</p>
                 <p>Процент: {countTrue/userAnswers.length*100}%</p>
