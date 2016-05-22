@@ -3,8 +3,7 @@ const ObjectId = require('mongodb').ObjectID;
 const database = require('./db/database.js');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
-//const app = isDevelopment ? require('./app.dev.js') : require('./app.prod.js');
-const app = require('./app.dev.js');
+const app = isDevelopment ? require('./app.dev.js') : require('./app.prod.js');
 const port = process.env.PORT || 3000;
 
 app.get('/db', (req, res) => {
