@@ -4,7 +4,9 @@ import styles from './resultTest.css';
 
 const ResultTest = React.createClass({
     componentWillMount () {
-      if (!this.props.addResult) { this.props.addPoints(); };
+        if (!this.props.iaAddResult) {
+            this.props.addPoints();
+        }
     },
 
     render() {

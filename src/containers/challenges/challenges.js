@@ -22,7 +22,12 @@ const Challenges = React.createClass({
     addPoints() {
         let points = 0;
         this.props.userAnswers.forEach(item => { if (item.answer) points++; });
-        this.props.dispatch(addResult(points));
+        console.log('points = ', points);
+        console.log('this.props.user.points = ', this.props.user.points);
+        console.log('points * 5 = ', points * 5);
+        console.log('points * 5 + this.props.user.points = ', points * 5 + Number(this.props.user.points));
+        points = points * 5 + Number(this.props.user.points);
+        this.props.dispatch(addResult(points, this.props.user._id));
     },
 
     _addNotification(event) {
@@ -86,7 +91,7 @@ const Challenges = React.createClass({
                 { finishedTest ? <ResultTest
                     userAnswers={this.props.userAnswers}
                     addPoints={this.addPoints}
-                    addResult={this.props.user.addResult}/> : null }
+                    iaAddResult={this.props.user.isAddResult}/> : null }
             </div>
         )
     }

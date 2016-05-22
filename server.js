@@ -1,8 +1,11 @@
+const ObjectId = require('mongodb').ObjectID;
+
+const database = require('./db/database.js');
+
 const isDevelopment = process.env.NODE_ENV === 'development';
 //const app = isDevelopment ? require('./app.dev.js') : require('./app.prod.js');
 const app = require('./app.dev.js');
 const port = process.env.PORT || 3000;
-const database = require('./db/database.js');
 
 app.get('/db', (req, res) => {
     database
@@ -20,7 +23,6 @@ app.get('/db', (req, res) => {
         .catch();
 });
 
-
 app.get('/users', (req, res) => {
     database
         .connect()
@@ -35,6 +37,44 @@ app.get('/users', (req, res) => {
                 });
         })
         .catch();
+});
+
+app.get('/user/:userId', (req, res) => {
+    database
+        .connect()
+        .then((db) => {
+            db.collection('users')
+                .findOne({
+                    "_id": new ObjectId(req.params.userId)
+                }, (err, doc) => {
+                res.send(doc);
+                });
+
+        })
+        .catch((err) => res.send(err));
+});
+
+app.get('/userUpd/:userId', (req, res) => {
+    database
+        .connect()
+        .then((db) => {
+            db.collection('users')
+                .findAndModify({
+                    "_id": new ObjectId(req.params.userId)
+                },
+                [['_id','asc']],
+                {
+                    "$set": { "points": req.query.points }
+                },
+                {},
+                (err, doc) => {
+                    if (err) res.send(err);
+                    res.send(doc);
+                });
+
+        })
+        .catch((err) => res.send(err));
+
 });
 
 app.listen(port, function(error) {
