@@ -11,7 +11,7 @@ const Auth = React.createClass({
     auth () {
         const userEmail = this.refs.userEmail.value;
         const userPassword = this.refs.userPassword.value;
-        fetch('http://localhost:3000/users')
+        fetch('/users')
             .then((response) => response.status === 200 ? response.json() : error)
             .then(json => this.props.dispatch(auth(json, userEmail, userPassword)));
     },

@@ -14,7 +14,7 @@ import { addResult } from '../../actions/user';
 const Challenges = React.createClass({
 
     checkAnswer(idQuestion, idAnswer) {
-        fetch('http://localhost:3000/db')
+        fetch('/db')
             .then((response) => response.status === 200 ? response.json() : error)
             .then(json => this.props.dispatch(answer(idQuestion, idAnswer, json)));
     },
@@ -40,7 +40,7 @@ const Challenges = React.createClass({
 
     componentWillMount() {
         if (!this.props.finishedTest && this.props.questions.length < 1) {
-            fetch('http://localhost:3000/db')
+            fetch('/db')
                 .then((response) => response.status === 200 ? response.json() : error)
                 .then(json => this.props.dispatch(getQuestions(json)));
         }
