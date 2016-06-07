@@ -16,8 +16,8 @@ app.use(webpackHotMiddleware(compiler));
 
 app.use(express.static(path.join(__dirname, 'static')));
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'));
+app.get(['/', '/auth', '/home', '/profile', '/challenges', '/results', '/share'], (req, res) => {
+    res.sendFile(`${__dirname}/index.html`);
 });
 
 module.exports = app;
