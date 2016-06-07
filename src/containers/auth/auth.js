@@ -55,7 +55,7 @@ const Auth = React.createClass({
                     <input type="text" placeholder="Email" ref="userEmail"/>
                     <label>password: </label>
                     <input type="password" placeholder="password" ref="userPassword"/>
-                    <a className={styles.button} onClick={this.auth}>Go In</a>
+                    <button className={styles.button} onClick={this.auth}>Go In</button>
                 </div>
             </div>
         )
