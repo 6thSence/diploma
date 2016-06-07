@@ -12,6 +12,7 @@ const initialState = {
 export default function user(state = initialState, action) {
     switch (action.type) {
         case AUTH:
+            console.log(action.users);
             const users = action.users.filter(item => item.email == action.userEmail && item.password == action.userPassword);
             return users.length > 0 ? { ...tail(users), authAnswer: true } : { authAnswer: false};
         case ADD_RESULT:
