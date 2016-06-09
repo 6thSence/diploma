@@ -1,7 +1,8 @@
-import { createStore, applyMiddleware, compose } from 'redux'
-import rootReducer from '../reducers'
 import createLogger from 'redux-logger';
+import { createStore, applyMiddleware, compose } from 'redux'
+
 import DevTools from '../containers/DevTools/DevTools';
+import rootReducer from '../reducers'
 import { updatePoints } from '../middleware/updatePoints';
 
 export default function configureStore(initialState) {
