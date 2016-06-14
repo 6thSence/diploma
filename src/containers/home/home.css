@@ -10,19 +10,22 @@
         }
     }
 
-.home {
+.inner {
+    position: relative;
+    margin: auto;
     padding: 50px 0 0;
+    size: 1148px 100%;
     }
 
-    .home__nav {
-        position: fixed 0 * * 0;
+    .nav {
+        position: absolute 0 * * 0;
         display: flex;
         margin: 0;
         padding: 0;
         width: 100%;
         }
 
-        .home__nav-link {
+        .nav-link {
             box-sizing: border-box;
             margin: 0;
             padding: 15px 0;
@@ -42,12 +45,12 @@
                 }
             }
 
-        .home__nav-link:nth-child(2n) {
+        .nav-link:nth-child(2n) {
             animation-delay: .2s;
             }
-        .home__nav-link:nth-child(3n) {
+        .nav-link:nth-child(3n) {
             animation-delay: .4s;
             }
-        .home__nav-link:nth-child(4n) {
+        .nav-link:nth-child(4n) {
             animation-delay: .6s;
             }

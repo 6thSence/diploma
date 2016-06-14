@@ -10,6 +10,7 @@ import Main from './containers/main/main';
 import Home from './containers/home/home';
 import Results from './containers/results/results';
 import Profile from './containers/profile/profile';
+import styles from './index.css';
 import Share from './containers/share/share';
 
 const store = configureStore();
