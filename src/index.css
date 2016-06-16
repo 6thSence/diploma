@@ -1,4 +1,9 @@
 body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
+    }
+
+body {
+    background: #4c6b8c inline('./assets/layout1.png') top left repeat-x;
     }

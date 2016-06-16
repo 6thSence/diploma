@@ -1,0 +1,73 @@
+.wrap {
+    position: absolute 0;
+    z-index: -1;
+    }
+
+.layout {
+    position: absolute * 0 0 0;
+    }
+
+.layout2 {
+    bottom: 63px;
+    composes: layout;
+    height: height('./assets/layout2.png');
+    background: inline('./assets/layout2.png') repeat-x;
+    z-index: 2;
+    }
+
+.layout3 {
+    bottom: 118px;
+    composes: layout;
+    height: height('./assets/layout3.png');
+    background: inline('./assets/layout3.png') repeat-x;
+    z-index: 3;
+    }
+
+.layout4 {
+    composes: layout;
+    height: height('./assets/layout4.png');
+    background: inline('./assets/layout4.png') repeat-x;
+    z-index: 4;
+    }
+
+.layout5 {
+    composes: layout;
+    height: height('./assets/layout5.png');
+    background: inline('./assets/layout5.png') repeat-x;
+    z-index: 5;
+    }
+
+.planet1 {
+    position: absolute 8% * * 4%;
+    background: inline('./assets/planet1.png') no-repeat;
+    width: width('./assets/planet1.png');
+    height: height('./assets/planet1.png');
+    }
+
+.planet2 {
+    position: absolute 29% * * 13%;
+    background: inline('./assets/planet2.png') no-repeat;
+    width: width('./assets/planet2.png');
+    height: height('./assets/planet2.png');
+    }
+
+.planet3 {
+    position: absolute * * 188px 3%;
+    background: inline('./assets/planet3.png') no-repeat;
+    width: width('./assets/planet3.png');
+    height: height('./assets/planet3.png');
+    }
+
+.planet4 {
+    position: absolute 76px 99px * *;
+    background: inline('./assets/planet4.png') no-repeat;
+    width: width('./assets/planet4.png');
+    height: height('./assets/planet4.png');
+    }
+
+.planet5 {
+    position: absolute * 3% 188px *;
+    background: inline('./assets/planet5.png') no-repeat;
+    width: width('./assets/planet5.png');
+    height: height('./assets/planet5.png');
+    }

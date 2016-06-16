@@ -10,11 +10,17 @@
         }
     }
 
+.wrap {
+    height: 100vh;
+    overflow: hidden;
+    }
+
 .inner {
     position: relative;
     margin: auto;
     padding: 50px 0 0;
     size: 1148px 100%;
+    background: white;
     }
 
     .nav {

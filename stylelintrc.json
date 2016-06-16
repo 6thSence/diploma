@@ -28,7 +28,6 @@
 		"function-comma-space-before": [2, "never"],
 		"function-parentheses-space-inside": [2, "never"],
 		"function-space-after": [2, "always"],
-		"function-url-quotes": [2, "none"],
 		"indentation": [0, 4],
 		"media-feature-colon-space-after": [2, "always"],
 		"media-feature-colon-space-before": [2, "never"],
