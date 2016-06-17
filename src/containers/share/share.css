@@ -1,1 +1,45 @@
+.share {
+    padding: 0 100px 50px 0;
+    color: #343539;
+    font: 24px ProximaNovaLight, Arial, sans-serif;
+    }
 
+    .title {
+        margin: 0 0 50px;
+        padding: 0 0 50px;
+        border-bottom: 1px solid #b7b7b7;
+        color: #343539;
+        font: 36px ProximaNovaBold, Arial, sans-serif;
+        }
+
+    .socials {
+        padding: 0 0 0 -15px;
+        }
+
+        .social {
+            display: inline-block;
+            padding: 0 15px;
+            outline: 0;
+            transition: opacity ease-in .1s;
+            size: 45px;
+            cursor: pointer;
+
+            &:hover {
+                opacity: .5;
+                }
+            }
+
+        .socialFb {
+            background: inline('./assets/fb.svg') center/contain no-repeat;
+            composes: social;
+            }
+
+        .socialVk {
+            background: inline('./assets/vk.svg') center/contain no-repeat;
+            composes: social;
+            }
+
+        .socialIn {
+            background: inline('./assets/in.svg') center/contain no-repeat;
+            composes: social;
+            }

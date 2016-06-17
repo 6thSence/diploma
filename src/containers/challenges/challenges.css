@@ -1,1 +1,13 @@
+.challenges {
+    padding: 0 100px 50px 0;
+    color: #343539;
+    font: 24px ProximaNovaLight, Arial, sans-serif;
+    }
 
+    .title {
+        margin: 0 0 50px;
+        padding: 0 0 50px;
+        border-bottom: 1px solid #b7b7b7;
+        color: #343539;
+        font: 36px ProximaNovaBold, Arial, sans-serif;
+        }

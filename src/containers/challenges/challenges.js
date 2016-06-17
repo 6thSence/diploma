@@ -77,10 +77,9 @@ const Challenges = React.createClass({
         return (
             <div className={styles.challenges}>
                 <NotificationSystem ref="notificationSystem" />
-
                 { !finishedTest
-                    ? <h2>This is your first test. Good luck!</h2>
-                    : <h2>Good Job!</h2> }
+                    ? <h1 className={styles.title}>Выберите верный ответ!</h1>
+                    : <h1 className={styles.title}>Отличная работа!</h1> }
 
                 { !finishedTest && questions.map(question =>
                     <Question
