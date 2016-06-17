@@ -34,6 +34,7 @@
         }
 
         .link {
+            outline: 0;
             opacity: 0;
             position: relative;
             display: block;
@@ -45,6 +46,10 @@
 
             &:hover {
                 opacity: .8;
+                }
+
+            &:focus {
+                opacity: .5;
                 }
             }
 

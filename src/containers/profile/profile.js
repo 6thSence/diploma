@@ -9,9 +9,15 @@ const Profile = React.createClass({
         const { user } = this.props;
         return (
             <div className={styles.profile}>
-                it's profile
-                <p>Name: {user.name}</p>
-                <p>Email: {user.email}</p>
+                <h1 className={styles.title}>Ваш профиль</h1>
+                <p className={styles.text}>
+                    Имя:
+                    <span className={styles.subText}> {user.name}</span>
+                </p>
+                <p className={styles.text}>
+                    Email:
+                    <span className={styles.subText}> {user.email}</span>
+                </p>
             </div>
         )
     }
