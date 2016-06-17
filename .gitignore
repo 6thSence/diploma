@@ -3,4 +3,5 @@ node_modules/
 .DS_Store
 static/*
 !static/parallax.min.js
+!static/layers.css
 !static/assets

@@ -6,18 +6,29 @@
         <title>diploma</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./static/layers.css">
     </head>
     <body>
         <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <!--<ul id="scene">-->
-            <!--<li class="layer" data-depth="0.00"><img src="./src/assets/layout1.png"></li>-->
-            <li class="layer" data-depth="0.20"><img src="static/assets/layout2.png"></li>
-        <!--</ul>-->
-        <div id="app" class="app"></div>
+        <div class="layers">
+            <div class="layer layout1" data-depth="0.00" style="background-image: url(./static/assets/layout1.png)"></div>
+            <div class="layer layout2" data-depth="0.20" style="background-image: url(./static/assets/layout2.png)"></div>
+            <div class="layer layout3" data-depth="0.40" style="background-image: url(./static/assets/layout3.png)"></div>
+            <div class="layer layout4" data-depth="0.50" style="background-image: url(./static/assets/layout4.png)"></div>
+            <div class="layer layout5" data-depth="0.55" style="background-image: url(./static/assets/layout5.png)"></div>
+
+            <div class="layer planet1" data-depth="0.20" style="background-image: url(./static/assets/planet1.png)"></div>
+            <div class="layer planet2" data-depth="0.5" style="background-image: url(./static/assets/planet2.png)"></div>
+            <div class="layer planet3" data-depth="0.30" style="background-image: url(./static/assets/planet3.png)"></div>
+            <div class="layer planet4" data-depth="0.40" style="background-image: url(./static/assets/planet4.png)"></div>
+            <div class="layer planet5" data-depth="0.60" style="background-image: url(./static/assets/planet5.png)"></div>
+        </div>
+
+        <div id="app"></div>
         <script src="./static/bundle.js"></script>
-        <script src="./lib/parallax.min.js"></script>
+        <script src="./static/parallax.min.js"></script>
         <script>
             var scene = document.getElementById('scene');
             var parallax = new Parallax(document.body);
