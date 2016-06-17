@@ -11,8 +11,16 @@
         <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
+        <!--<ul id="scene">-->
+            <!--<li class="layer" data-depth="0.00"><img src="./src/assets/layout1.png"></li>-->
+            <li class="layer" data-depth="0.20"><img src="static/assets/layout2.png"></li>
+        <!--</ul>-->
         <div id="app" class="app"></div>
         <script src="./static/bundle.js"></script>
+        <script src="./lib/parallax.min.js"></script>
+        <script>
+            var scene = document.getElementById('scene');
+            var parallax = new Parallax(document.body);
+        </script>
     </body>
 </html>

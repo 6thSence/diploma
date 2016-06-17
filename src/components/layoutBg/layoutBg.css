@@ -5,6 +5,7 @@
 
 .layout {
     position: absolute * 0 0 0;
+    transition: transform .3s ease-in;
     }
 
 .layout2 {
@@ -37,7 +38,12 @@
     z-index: 5;
     }
 
+.planet {
+    transition: transform .3s ease-in;
+    }
+
 .planet1 {
+    composes: planet;
     position: absolute 8% * * 4%;
     background: inline('./assets/planet1.png') no-repeat;
     width: width('./assets/planet1.png');
@@ -45,6 +51,7 @@
     }
 
 .planet2 {
+    composes: planet;
     position: absolute 29% * * 13%;
     background: inline('./assets/planet2.png') no-repeat;
     width: width('./assets/planet2.png');
@@ -52,21 +59,24 @@
     }
 
 .planet3 {
-    position: absolute * * 188px 3%;
+    composes: planet;
+    position: absolute * * 18% 3%;
     background: inline('./assets/planet3.png') no-repeat;
     width: width('./assets/planet3.png');
     height: height('./assets/planet3.png');
     }
 
 .planet4 {
-    position: absolute 76px 99px * *;
+    composes: planet;
+    position: absolute 7% 8% * *;
     background: inline('./assets/planet4.png') no-repeat;
     width: width('./assets/planet4.png');
     height: height('./assets/planet4.png');
     }
 
 .planet5 {
-    position: absolute * 3% 188px *;
+    composes: planet;
+    position: absolute * 3% 19% *;
     background: inline('./assets/planet5.png') no-repeat;
     width: width('./assets/planet5.png');
     height: height('./assets/planet5.png');

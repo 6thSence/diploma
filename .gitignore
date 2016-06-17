@@ -1,4 +1,6 @@
 node_modules/
 .idea/
 .DS_Store
-static/
+static/*
+!static/parallax.min.js
+!static/assets
