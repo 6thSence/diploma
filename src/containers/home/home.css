@@ -13,42 +13,68 @@
 .wrap {
     overflow: hidden;
     height: 100vh;
+    font-family: ProximaNovaBold;
     }
 
 .inner {
     position: relative;
+    box-sizing: border-box;
     margin: auto;
     padding: 50px 0 0;
+    padding-left: 233px;
     background: white;
     size: 1148px 100%;
     }
 
     .nav {
-        position: absolute 0 * * 0;
+        position: absolute 0 * 0 0;
         margin: 0;
         padding: 0;
-        width: 100%;
+        size: 130px 100%;
         }
 
         .link {
-            opacity: 0;
-            animation: show ease-in .4s forwards;
-            size: 130px;
+            position: relative;
+            display: block;
+            text-decoration: none;
+            transition: opacity .3s;
+            size: 130px 125px;
+            animation: show ease-in .4s 1s;
+            text-align: center;
+
+            &:hover {
+                opacity: .8;
+                }
             }
 
         .linkPerson {
+            background: #348aab inline('./assets/profile.svg') center 20px no-repeat;
             composes: link;
+            border-bottom: 5px solid #499cbc;
             }
 
         .linkStart {
+            background: #e26162 inline('./assets/start.svg') center 20px no-repeat;
+            animation-delay: 1.2s;
             composes: link;
-            animation-delay: .2s;
+            border-bottom: 5px solid #dc7d7e;
             }
         .linkResults {
+            background: #46c06e inline('./assets/statistics.svg') center 20px no-repeat;
+            animation-delay: 1.4s;
             composes: link;
-            animation-delay: .4s;
+            border-bottom: 5px solid #6acc8a;
             }
-        .linkSahre {
+        .linkShare {
+            background: #eea63f inline('./assets/share.svg') center 20px no-repeat;
+            animation-delay: 1.6s;
             composes: link;
-            animation-delay: .6s;
+            border-bottom: 5px solid #f0c280;
             }
+
+            .linkText {
+                color: white;
+                position: absolute * 0 15px;
+                text-transform: uppercase;
+                font-size: 12px;
+                }

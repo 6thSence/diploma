@@ -39,7 +39,7 @@ module.exports = {
                 loader: 'json-loader'
             },
             {
-                test: /\.(jpg|png|jpeg|gif|ico|woff|svg|woff2|eot)$/,
+                test: /\.(jpg|png|jpeg|gif|ico|woff|svg|woff2|eot|otf)$/,
                 loader: 'file-loader'
             }
         ]
