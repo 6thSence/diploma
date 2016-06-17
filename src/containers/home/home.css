@@ -13,7 +13,7 @@
 .wrap {
     overflow: hidden;
     height: 100vh;
-    font-family: ProximaNovaBold;
+    font-family: ProximaNovaBold, Arial, sans-serif;
     }
 
 .inner {

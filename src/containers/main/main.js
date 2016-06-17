@@ -7,29 +7,7 @@ const Main = React.createClass ({
         this.setState({
             start: 'true'
         });
-        setTimeout(() => browserHistory.push('/auth'), 1500);
-    },
-
-    componentWillReceiveProps() {
-        //TODO: get users
-        //if (!this.props.finishedTest && this.props.userAnswers.length > 0) {
-        //    switch (tail(this.props.userAnswers).answer) {
-        //        case true:
-        //            this._notificationSystem.addNotification({
-        //                message: 'Верно!',
-        //                level: 'success'
-        //            });
-        //            break;
-        //        case false:
-        //            this._notificationSystem.addNotification({
-        //                message: `Не верно! Правильный ответ: ${tail(this.props.userAnswers).trueAnswer}`,
-        //                level: 'error'
-        //            });
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //}
+        setTimeout(() => browserHistory.push('/auth'), 2200);
     },
 
     getInitialState(){
@@ -41,9 +19,10 @@ const Main = React.createClass ({
     render() {
         return (
             <div className={styles.main}>
-                <div className={styles.circle}></div>
+                <h1 className={styles.title}>Здесь возможно какой-то будет заголовок</h1>
+                <h2 className={styles.subTitle}>Здесь еще можно написать какой-то подзаголовок</h2>
+                <a href="#" className={styles.button} onClick={this.start}>Поехали!</a>
                 <div className={this.state.start ? styles.started : styles.rocket}></div>
-                <a href="#" className={styles.button} onClick={this.start}>Поехали  </a>
             </div>
             )
     }
