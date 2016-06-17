@@ -1,62 +1,54 @@
 @keyframes show {
     0% {
-        transform: translateX(-100%);
+        transform: translateY(-100%);
         opacity: 0;
         }
 
     100% {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
         }
     }
 
 .wrap {
-    height: 100vh;
     overflow: hidden;
+    height: 100vh;
     }
 
 .inner {
     position: relative;
     margin: auto;
     padding: 50px 0 0;
-    size: 1148px 100%;
     background: white;
+    size: 1148px 100%;
     }
 
     .nav {
         position: absolute 0 * * 0;
-        display: flex;
         margin: 0;
         padding: 0;
         width: 100%;
         }
 
-        .nav-link {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 15px 0;
-            height: 50px;
-            background: cornflowerblue;
-            color: #fff;
-            list-style: none;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
+        .link {
             opacity: 0;
             animation: show ease-in .4s forwards;
-            flex: 1;
-
-            &:hover {
-                background: dodgerblue;
-                }
+            size: 130px;
             }
 
-        .nav-link:nth-child(2n) {
+        .linkPerson {
+            composes: link;
+            }
+
+        .linkStart {
+            composes: link;
             animation-delay: .2s;
             }
-        .nav-link:nth-child(3n) {
+        .linkResults {
+            composes: link;
             animation-delay: .4s;
             }
-        .nav-link:nth-child(4n) {
+        .linkSahre {
+            composes: link;
             animation-delay: .6s;
             }
