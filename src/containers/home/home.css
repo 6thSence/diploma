@@ -34,12 +34,13 @@
         }
 
         .link {
+            opacity: 0;
             position: relative;
             display: block;
             text-decoration: none;
             transition: opacity .3s;
             size: 130px 125px;
-            animation: show ease-in .4s 1s;
+            animation: show ease-in .4s 1s forwards;
             text-align: center;
 
             &:hover {

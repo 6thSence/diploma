@@ -1,0 +1,34 @@
+@keyframes shadowPlay {
+    0% {
+        border: 15px solid rgba(42, 131, 207, .8);
+        box-shadow: inset 0 0 0 7px #62b0dc, 0 0 0 0 rgba(85, 98, 157, .9);
+        }
+    100% {
+        border: 15px solid rgba(42, 131, 207, .3);
+        box-shadow: inset 0 0 0 2px #62b0dc, 0 0 0 50px rgba(85, 98, 157, 0);
+        }
+    }
+
+.button {
+    outline: 0;
+    display: block;
+    margin: 0 auto 60px;
+    border: 15px solid rgba(42, 131, 207, .8);
+    border-radius: 50%;
+    color: #fff #00a2ff;
+    text-align: center;
+    text-decoration: none;
+    font: 24px/173px ProximaNovaBold, Arial, sans-serif;
+    transition: opacity ease-in .3s;
+    animation: shadowPlay cubic-bezier(0, 0, .58, 1) 1s infinite;
+    size: 173px;
+
+    &:hover {
+        opacity: .9;
+        animation-duration: .8s;
+        }
+
+    &:focus {
+        opacity: .4;
+        }
+    }

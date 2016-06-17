@@ -3,6 +3,7 @@ import { browserHistory } from 'react-router';
 import NotificationSystem from 'react-notification-system';
 import { connect } from 'react-redux'
 
+import BlueButton from '../../components/blueButton/blueButton';
 import styles from './auth.css';
 import { auth } from '../../actions/user';
 
@@ -47,15 +48,21 @@ const Auth = React.createClass({
 
     render() {
         return (
-            <div className={styles.auth}>
+            <div className={styles.inner}>
                 <NotificationSystem ref="notificationSystem" />
-                it's auth
                 <div>
-                    <label>email: </label>
-                    <input type="text" placeholder="Email" ref="userEmail"/>
-                    <label>password: </label>
-                    <input type="password" placeholder="password" ref="userPassword"/>
-                    <button className={styles.button} onClick={this.auth}>Go In</button>
+                    <input ref="userEmail"
+                        className={styles.input}
+                        type="text"
+                        placeholder="Email"
+                        tabindex="0"
+                        autoFocus/>
+                    <input ref="userPassword"
+                        className={styles.inputPassword}
+                        type="password"
+                        placeholder="Пароль"
+                        tabindex="1"/>
+                    <BlueButton onClick={this.auth} text="Войти" tabindex="2"/>
                 </div>
             </div>
         )

@@ -1,3 +1,37 @@
-.button {
-    cursor: pointer;
+.inner {
+    padding: 205px 0 0;
+    box-sizing: border-box;
     }
+
+    .input {
+        display: block;
+        outline: 0;
+        size: 365px 65px;
+        margin: 0 auto 20px;
+        padding: 20px;
+        box-sizing: border-box;
+        color: #000 #fff;
+        border: solid 2px #ed5946;
+        font: 24px ProximaNovaLight, Arial, sans-serif;
+        text-overflow: ellipsis;
+        transition: border ease-in .3s;
+
+        &:focus {
+            border: solid 5px #ed5946;
+            }
+        }
+
+    .inputPassword {
+        composes: input;
+        margin: 0 auto 120px;
+        }
+
+    .input::placeholder {
+        text-align: center;
+        color: #c4c4c4;
+        }
+
+    .input:-webkit-autofill {
+        -webkit-box-shadow: inset 0 0 0 50px #fff;
+        color: #999;
+        }
