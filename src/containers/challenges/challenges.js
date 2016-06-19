@@ -81,12 +81,15 @@ const Challenges = React.createClass({
                     ? <h1 className={styles.title}>Выберите верный ответ!</h1>
                     : <h1 className={styles.title}>Отличная работа!</h1> }
 
-                { !finishedTest && questions.map(question =>
-                    <Question
-                        question={question}
-                        key={question.idQuestion}
-                        checkAnswer={this.checkAnswer}/>
-                )}
+                <ul>
+                    { !finishedTest && questions.map(question =>
+                            <Question
+                                question={question}
+                                key={question.idQuestion}
+                                checkAnswer={this.checkAnswer}/>
+                    )}
+                </ul>
+
                 { finishedTest ? <ResultTest
                     userAnswers={this.props.userAnswers}
                     addPoints={this.addPoints}

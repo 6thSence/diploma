@@ -1,1 +1,8 @@
+.question {
+    display: none;
+
+    &:first-child {
+        display: block;
+        }
+    }
 

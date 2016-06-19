@@ -1,24 +1,40 @@
 [
 	{
 		"idQuestion": 1,
-		"question": "3 + 4 = ?",
+		"type": "HTML",
+		"question": "Какая ошибка содержится в следующей строке?\n<span class='tag'>&lt;<span>p</span>&gt;</span><span class='tag'>&lt;<span>b</span>&gt;</span>lorem ipsum dolor sit <span class='tag'>&lt;/<span>b</span>&gt;</span><span class='tag'>&lt;<span>span</span>&gt;</span>amet<span class='tag'>&lt;<span>blockquote</span>&gt;</span>consectetuer<span class='tag'>&lt;/<span>blockquote</span>&gt;</span><span class='tag'>&lt;<span>span</span>&gt;</span>adipicim<span class='tag'>&lt;/<span>span</span>&gt;</span> elit<span class='tag'>&lt;/<span>span</span>&gt;</span><span class='tag'>&lt;/<span>p</span>&gt;</span></code>",
 		"answers": {
-			"1": 7,
-			"2": 5,
-			"3": 4,
-			"4": 9
+			"1": "Тег <span> задан без атрибутов.",
+			"2": "Блочный элемент размещается внутри строчного.",
+			"3": "Перекрёстное вложение тегов.",
+			"4": "Строчный элемент размещается внутри блочного.",
+			"5": "Тег <b> использовать нельзя, его следует заменить на тег <strong>."
+		},
+		"idAnswer": 2
+	},
+	{
+		"idQuestion": 2,
+		"question": "Какая ошибка содержится в следующем стиле?\nimg { float: left; border-width: 3; display: block }",
+		"type": "CSS",
+		"answers": {
+			"1": "Не указаны единицы измерения свойства border-width.",
+			"2": "Значение block свойства display не допускается применять к изображениям.",
+			"3": "Не хватает точки с запятой в конце записи.",
+			"4": "Значения left и block написаны без кавычек.",
+			"5": "Свойства border-width не существует."
 		},
 		"idAnswer": 1
 	},
 	{
-		"idQuestion": 2,
-		"question": "8 - 5 = ?",
+		"idQuestion": 3,
+		"question": "Существует ли такое значение X, что после присваивания a = X вызов alert(a == X) выдаст false?\nvar a = X;\nalert( a == X ); // false",
+		"type": "JavaScript",
 		"answers": {
-			"1": 7,
-			"2": 5,
-			"3": 3,
-			"4": 9
+			"1": "Да, X – это undefined.",
+			"2": "Да, X – это null.",
+			"3": "Да, другое.",
+			"4": "Нет, не бывает."
 		},
-		"idAnswer": 3
+		"idAnswer": 2
 	}
 ]

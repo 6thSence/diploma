@@ -76,6 +76,10 @@ app.get('/userUpd/:userId', (req, res) => {
 
 });
 
+app.get(['/', '/auth', '/home', '/profile', '/challenges', '/results', '/share'], res => {
+    res.sendFile(`${__dirname}/index.html`);
+});
+
 app.listen(port, function(error) {
     if (error) {
         console.error(error);

@@ -12,7 +12,7 @@ export default class Question extends Component {
         } = this.props.question;
 
         return (
-            <div className={styles.question}>
+            <li className={styles.question}>
                 <h3>{ question }</h3>
                 <ul>
                     {Object.keys(answers).map(id => <Answer
@@ -23,7 +23,7 @@ export default class Question extends Component {
                         checkAnswer = {this.props.checkAnswer}/>
                     )}
                 </ul>
-            </div>
+            </li>
         )
     }
 };

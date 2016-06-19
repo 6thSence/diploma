@@ -17,15 +17,6 @@ import './styles/fonts.css';
 
 const store = configureStore();
 
-const ask = () => {
-    //TODO: leave action from challenges
-    //if (confirm('Для достижения результата нужно завершить тестирование. Уйти?')) {
-    //    console.log('true');
-    //} else {
-    //    console.log('false');
-    //}
-};
-
 render(<Provider store={store}>
     <Router history={browserHistory}>
         <Router path="/" component={Main}/>

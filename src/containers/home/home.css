@@ -12,7 +12,6 @@
 
 .wrap {
     overflow: hidden;
-    height: 100vh;
     font-family: ProximaNovaBold, Arial, sans-serif;
     }
 
@@ -23,7 +22,8 @@
     padding: 50px 0 0;
     padding-left: 233px;
     background: white;
-    size: 1148px 100%;
+    size: 1148px *;
+    min-height: 100vh;
     }
 
     .nav {
