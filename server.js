@@ -76,7 +76,7 @@ app.get('/userUpd/:userId', (req, res) => {
 
 });
 
-app.get(['/', '/auth', '/home', '/profile', '/challenges', '/results', '/share'], res => {
+app.get(['/', '/auth', '/home', '/profile', '/challenges', '/results', '/share'], (req, res) => {
     res.sendFile(`${__dirname}/index.html`);
 });
 

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import styles from './resultTest.css';
-
 const ResultTest = React.createClass({
     componentWillMount () {
         if (!this.props.iaAddResult) {

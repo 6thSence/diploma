@@ -21,8 +21,8 @@ const Main = React.createClass ({
     render() {
         return (
             <div className={styles.main}>
-                <h1 className={styles.title}>Здесь возможно какой-то будет заголовок</h1>
-                <h2 className={styles.subTitle}>Здесь еще можно написать какой-то подзаголовок</h2>
+                <h1 className={styles.title}>Аттестационная площадка</h1>
+                <h2 className={styles.subTitle}>Авторизуйтесь и пройдите тестирование</h2>
                 <BlueButton onClick={this.start} text="Поехали!"/>
                 <div className={this.state.start ? styles.started : styles.rocket}></div>
             </div>

@@ -2,16 +2,12 @@ diploma
 
 ## JUST
 ``` javascript
-npm run start
+npm run start //for production
+npm run dev //for development
 //or 
 //{process.env} npm start
+//{process.env} npm dev
 ```
-
-## process.env
-``` javascript
-    NODE_ENV=development  //for development
-```
-
 
 ## format for imoprt json file in to mongoLab 
 ``` javascript 

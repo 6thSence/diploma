@@ -24,7 +24,7 @@ render(<Provider store={store}>
         <Router path="home" component={Home}>
             <IndexRoute component={Results} />
             <Router path="/profile" component={Profile}/>
-            <Router path="/challenges" component={Challenges} onLeave={ask}/>
+            <Router path="/challenges" component={Challenges}/>
             <Router path="/results" component={Results}/>
             <Router path="/share" component={Share}/>
         </Router>
