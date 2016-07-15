@@ -1,8 +1,10 @@
 const path = require('path');
 const express = require('express');
 
+const app = require('./api.js');
+
 const port = process.env.PORT || 3000;
-const app = express();
+//const app = express();
 
 app.set('port', port);
 

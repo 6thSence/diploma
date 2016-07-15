@@ -15,7 +15,7 @@ const ResultTest = React.createClass({
         const points = countTrue*5;
 
         return (
-            <div className={ styles.result }>
+            <div>
                 <h2>Тест окончен. Ура!</h2>
                 <p>Начислено баллов за достижение: {points}</p>
                 <p>Правильных ответов: {countTrue}</p>

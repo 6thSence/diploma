@@ -5,8 +5,10 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const config = require('./webpack.config');
 const express = require('express');
 
+const app = require('./api.js');
+
 const compiler = webpack(config);
-const app = express();
+//const app = express();
 
 app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
