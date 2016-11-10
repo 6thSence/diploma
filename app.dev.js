@@ -8,7 +8,6 @@ const express = require('express');
 const app = require('./api.js');
 
 const compiler = webpack(config);
-//const app = express();
 
 app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
