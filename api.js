@@ -43,7 +43,7 @@ app.get('/user/:userId', (req, res) => {
         .then((db) => {
             db.collection('users')
             .findOne({
-                "_id": new ObjectId(req.params.userId)
+                '_id': new ObjectId(req.params.userId)
             }, (err, doc) => {
             res.send(doc);
         });
@@ -58,11 +58,11 @@ app.get('/userUpd/:userId', (req, res) => {
         .then((db) => {
             db.collection('users')
             .findAndModify({
-                    "_id": new ObjectId(req.params.userId)
+                    '_id': new ObjectId(req.params.userId)
                 },
                 [['_id','asc']],
                 {
-                    "$set": { "points": req.query.points }
+                    '$set': { 'points': req.query.points }
                 },
                 {},
                 (err, doc) => {
