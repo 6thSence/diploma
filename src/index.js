@@ -22,7 +22,7 @@ render(<Provider store={store}>
         <Router path="/" component={Main}/>
         <Router path="auth" component={Auth}/>
         <Router path="home" component={Home}>
-            <IndexRoute component={Results} />
+            <IndexRoute component={Challenges} />
             <Router path="/profile" component={Profile}/>
             <Router path="/challenges" component={Challenges}/>
             <Router path="/results" component={Results}/>

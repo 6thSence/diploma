@@ -1,6 +1,7 @@
 import React from 'react';
 import NotificationSystem from 'react-notification-system';
 import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
 
 import { tail } from '../../utils/helpers';
 
@@ -94,6 +95,9 @@ const Challenges = React.createClass({
                     userAnswers={this.props.userAnswers}
                     addPoints={this.addPoints}
                     iaAddResult={this.props.user.isAddResult}/> : null }
+
+                { finishedTest ? <a onClick={ () => browserHistory.push('/auth') }>
+                LM: Скачать список лучших книг по frontend разработке</a> : null }
             </div>
         )
     }

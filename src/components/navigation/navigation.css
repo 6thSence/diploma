@@ -1,0 +1,72 @@
+@keyframes show {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+        }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        }
+    }
+
+.nav {
+    position: absolute 0 * 0 0;
+    margin: 0;
+    padding: 0;
+    size: 130px 100%;
+    }
+
+    .link {
+        outline: 0;
+        opacity: 0;
+        position: relative;
+        display: block;
+        text-decoration: none;
+        transition: opacity .3s;
+        size: 130px 125px;
+        animation: show ease-in .4s 1s forwards;
+        text-align: center;
+
+        &:hover {
+            opacity: .8;
+            }
+
+        &:focus {
+            opacity: .5;
+            }
+        }
+
+    .linkPerson {
+        background: #348aab inline('./assets/profile.svg') center 20px no-repeat;
+        composes: link;
+        border-bottom: 5px solid #499cbc;
+        }
+
+    .linkStart {
+        background: #e26162 inline('./assets/start.svg') center 20px no-repeat;
+        animation-delay: 1.2s;
+        composes: link;
+        border-bottom: 5px solid #dc7d7e;
+        }
+
+    .linkResults {
+        background: #46c06e inline('./assets/statistics.svg') center 20px no-repeat;
+        animation-delay: 1.4s;
+        composes: link;
+        border-bottom: 5px solid #6acc8a;
+        }
+
+    .linkShare {
+        background: #eea63f inline('./assets/share.svg') center 20px no-repeat;
+        animation-delay: 1.6s;
+        composes: link;
+        border-bottom: 5px solid #f0c280;
+        }
+
+    .linkText {
+        color: white;
+        position: absolute * 0 15px;
+        text-transform: uppercase;
+        font-size: 12px;
+        }

@@ -51,18 +51,19 @@ const Auth = React.createClass({
             <div className={styles.inner}>
                 <NotificationSystem ref="notificationSystem" />
                 <div>
-                    <input ref="userEmail"
+
+                    <input ref="userPassword"
                         className={styles.input}
+                        type="password"
+                        placeholder="Имя"
+                        tabindex="1"/>
+                    <input ref="userEmail"
+                        className={styles.inputPassword}
                         type="text"
                         placeholder="Email"
                         tabindex="0"
                         autoFocus/>
-                    <input ref="userPassword"
-                        className={styles.inputPassword}
-                        type="password"
-                        placeholder="Пароль"
-                        tabindex="1"/>
-                    <BlueButton onClick={this.auth} text="Войти" tabindex="2"/>
+                    <BlueButton onClick={this.auth} text="Скачать" tabindex="2"/>
                 </div>
             </div>
         )
