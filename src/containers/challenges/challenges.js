@@ -96,7 +96,7 @@ const Challenges = React.createClass({
                     addPoints={this.addPoints}
                     iaAddResult={this.props.user.isAddResult}/> : null }
 
-                { finishedTest ? <a onClick={ () => browserHistory.push('/auth') }>
+                { finishedTest ? <a className={styles.link} onClick={ () => browserHistory.push('/auth') }>
                 LM: Скачать список лучших книг по frontend разработке</a> : null }
             </div>
         )

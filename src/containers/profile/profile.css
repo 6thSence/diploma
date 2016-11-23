@@ -19,3 +19,9 @@
     .subText {
         font-family: ProximaNovaBold;
         }
+
+    .link {
+        color: blue;
+        border-bottom: solid 2px;
+        cursor: pointer;
+    }

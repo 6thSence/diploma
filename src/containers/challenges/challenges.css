@@ -11,3 +11,8 @@
         color: #343539;
         font: 36px ProximaNovaBold, Arial, sans-serif;
         }
+
+    .link {
+        color: blue;
+        cursor: pointer;
+        }

@@ -54,7 +54,7 @@ const Auth = React.createClass({
 
                     <input ref="userPassword"
                         className={styles.input}
-                        type="password"
+                        type="text"
                         placeholder="Имя"
                         tabindex="1"/>
                     <input ref="userEmail"
@@ -63,7 +63,7 @@ const Auth = React.createClass({
                         placeholder="Email"
                         tabindex="0"
                         autoFocus/>
-                    <BlueButton onClick={this.auth} text="Скачать" tabindex="2"/>
+                    <BlueButton onClick={() => browserHistory.push('/profile')} text="Скачать" tabindex="2"/>
                 </div>
             </div>
         )
