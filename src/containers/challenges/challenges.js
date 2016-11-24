@@ -80,7 +80,7 @@ const Challenges = React.createClass({
                 <NotificationSystem ref="notificationSystem" />
                 { !finishedTest
                     ? <h1 className={styles.title}>Выберите верный ответ!</h1>
-                    : <h1 className={styles.title}>Отличная работа!</h1> }
+                    : null }
 
                 <ul>
                     { !finishedTest && questions.map(question =>
@@ -96,8 +96,11 @@ const Challenges = React.createClass({
                     addPoints={this.addPoints}
                     iaAddResult={this.props.user.isAddResult}/> : null }
 
+
+
                 { finishedTest ? <a className={styles.link} onClick={ () => browserHistory.push('/auth') }>
-                LM: Скачать список лучших книг по frontend разработке</a> : null }
+                Хочу еще!  </a> : null }
+
             </div>
         )
     }

@@ -50,21 +50,20 @@ const Auth = React.createClass({
         return (
             <div className={styles.inner}>
                 <NotificationSystem ref="notificationSystem" />
-                <div>
-
-                    <input ref="userPassword"
-                        className={styles.input}
-                        type="text"
-                        placeholder="Имя"
-                        tabindex="1"/>
-                    <input ref="userEmail"
-                        className={styles.inputPassword}
-                        type="text"
-                        placeholder="Email"
-                        tabindex="0"
-                        autoFocus/>
-                    <BlueButton onClick={() => browserHistory.push('/profile')} text="Скачать" tabindex="2"/>
-                </div>
+                <form method="POST" action="https://cp.unisender.com/ru/subscribe?hash=5kuzmdi6xe175ueo3q4qr78upmcmswtxhzcyenhkusy9wcz6dwrry" name="subscribtion_form">
+                    <div class="contact-form__inputs">
+                        <input className={styles.input} placeholder="Как вас зовут?" tabindex="1" type="text" name="name" />
+                        <input className={styles.inputPassword} placeholder="Email" tabindex="2" type="text" name="email" />
+                    </div>
+                    <input className={styles.button} id="submite-button" title="Подписаться" tabindex="3" type="submit" value="Отправить" />
+                    <div>
+                        <input type="hidden" name="charset" value="UTF-8" />
+                        <input type="hidden" name="default_list_id" value="8344937" />
+                        <input type="hidden" name="overwrite" value="2" />
+                        <input type="hidden" name="is_v5" value="1" />
+                        <input type="hidden" name="Name" value="Имя" />
+                    </div>
+                </form>
             </div>
         )
     }
